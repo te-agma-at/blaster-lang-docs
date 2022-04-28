@@ -1,0 +1,75 @@
+# Blaster, the better OOP language
+
+# For beginners, start with this:
+
+# VARIABLES
+# Variables are NOT dynamic by default, but they don't require "var" at the start of them in the assigning process.
+# Data types include:
+x:Int = 5 # Integers
+x:Float = 3.2 # Floats
+x:String = "Hello World!" # Strings (Must include '' or "" wrapping)
+x:Bool = true # Booleans (Either true or false)
+x:Byte = 0x00000001 # Byte arrays (More advanced data type)
+x:Array = [1, 2, 3, 4, 5] # Typed arrays (Any type can be put into them at any quantity)
+x:Literal = ascii(0x4a) # Literals, can be ASCII characters, binary codes, but must NOT be a string (Prints J)
+x:Any # Special data type that doesn't have to be initialized and can hold any data type
+x:Null # Special data type that returns an exit code of 1 when used anywhere (Specific error printed is a NullReferenceError)
+
+# A built-in function made to print any variable or data type:
+  x:String = "Hello World!"
+  log.print(x) <==== "Hello world!"
+# It does not have to print variables, though
+  log.print("Hello World!") <==== "Hello world!"
+
+# Attempting to print any other data type will result in a TypeError:
+  log.print(3) <==== ERROR | TypeError thrown here - "Could not parse String as Int"
+# So we have to use str() around the integer
+  log.print(str(3)) <==== 3
+  
+# Same goes for strings that have to be turned into numbers;
+  log.print(int("3") + 2) <==== 5
+  
+# LOGS
+# We've seen the log.print() function before. Now, we'll look more into the logs and see all their functions!
+  input = log.readln() # Let's say we entered line "Hello World!"
+  log.print(input) <==== "Hello World!"
+# It printed what we just put in!
+# The log.close() function allows us to end any input until we run the program again.
+  log.close() <==== Successfully terminated logs with exit code 0
+
+# WORKING WITH STRINGS
+# Strings are versatile data types - that means that they can be changed and modified
+  sentence:String = "The quick brown fox jumps over the lazy dog"
+  sentence.lower() # the quick brown fox jumps over the lazy dog
+  sentence.upper() # THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+  sentence.find("dog") # dog
+  sentence.replace("dog", "log") # The quick brown fox jumps over the lazy log
+  
+# MATH
+# Arithmetics are mathematical operators found in most programming languages
+
+# Binary arithmetics (Add, sub, mult, div, mod):
+  1 + 1 # Returns 2
+  1 - 1 # Returns 0
+  1 * 1 # Returns 1
+  1 / 1 # Returns 1
+  1 % 1 # Returns 0
+
+# Appliable arithmetics (Increment, add, decrement, sub, mult, div, mod):
+  1++ # Returns 2
+  1 += 2 # Returns 3
+  1-- # Returns 0
+  1 -= 2 # Returns -1
+  1 *= 1 # Returns 1
+  1 /= 1 # Returns 1
+  1 %= 1 # Returns 0
+
+# Operators (Equals, doesn't equal, greater, lesser, greater equal, lesser equal, and, not, or):
+  1 + 1 == 2 # Returns true
+  3 + 2 != 5 # Returns false
+  4 < 2 # False
+  4 > 2 # True
+  4 <= 2 # False
+  4 >= 2 # True
+  1 != 1 && 4 >= 2 # False since one condition returns false (And requires both conditions to return true before it can return true)
+  
